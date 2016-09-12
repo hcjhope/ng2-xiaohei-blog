@@ -27,6 +27,7 @@ If your code is merged to this project , congraduation , you are become a contri
 
 I'm looking forward for your joinning!
 
+# ng2-xiaohei-blog [项目中文介绍]
 
 这个项目是为我的博客创建的，我的博客大概两年前使用angular.js-1.3.x建立的，博客地址 http://www.lizhiqianduan.com/myblog 。
 
