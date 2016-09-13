@@ -46,7 +46,7 @@ I'm looking forward for your joinning!
 
 4. 使用命令`git push`将这些修改推送到自己的github版本库列表中；
 
-5. 最后，打开浏览器，回到`www.github.com/你的账号名/ycc`，点击页面的`new pull request`按钮。
+5. 最后，打开浏览器，回到`www.github.com/你的账号名/ng2-xiaohei-blog`，点击页面的`new pull request`按钮。
 
 这样，就会给我发起一个代码合并请求来合并你修改的代码。
 
