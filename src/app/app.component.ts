@@ -1,6 +1,9 @@
 import { Component , OnInit } from '@angular/core';
 
 import { config } from './app.config';
+import { AppServices } from './app.services';
+import { BlogCategory } from './app.classes';
+
 
 
 // root component of the whole body
@@ -41,10 +44,19 @@ class HeadTitleComponent implements OnInit {
 	templateUrl: config.topNavHtmlUrl
 })
 class TopNavComponent implements OnInit {
-	constructor() {}
+	private categories : BlogCategory[];
+
+	constructor(
+		private appServices : AppServices
+		) {}
 
 	ngOnInit() {
-		
+		this.appServices.getCateInfo().then(data=>{
+			this.categories = data
+		})
+		.catch(reason=>{
+			console.error(reason);
+		})
 	}
 }
 // bottom footer component
