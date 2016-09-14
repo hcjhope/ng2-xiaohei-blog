@@ -12,6 +12,6 @@ import { config } from '../app.config';
     <bottom-footer></bottom-footer>
   `
 })
-class Ng2XiaoheiBlogComponent {
+export class Ng2XiaoheiBlogComponent {
   title = 'ng2 xiaohei blog , hello world !';
 }

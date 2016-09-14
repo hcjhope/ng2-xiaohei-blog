@@ -10,7 +10,7 @@ import { config } from '../app.config';
     	<title>{{title}}</title>
 	`
 })
-class HeadTitleComponent implements OnInit {
+export class HeadTitleComponent implements OnInit {
 	
 	title = "... ng2 xiaohei blog";
 

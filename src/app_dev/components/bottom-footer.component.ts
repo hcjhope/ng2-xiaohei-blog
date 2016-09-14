@@ -8,7 +8,7 @@ import { config } from '../app.config';
 	selector: 'bottom-footer',
 	templateUrl: config.bottomFooterHtmlUrl
 })
-class BottomFooterComponent implements OnInit {
+export class BottomFooterComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit() {

@@ -4,7 +4,7 @@ import { config } from '../app.config';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import { BlogCategory } from '../app/classes/BlogCategory.class';
+import { BlogCategory } from '../classes/BlogCategory.class';
 
 @Injectable()
 export class BlogCategoryService {

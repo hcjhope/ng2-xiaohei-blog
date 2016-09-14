@@ -4,6 +4,8 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
+    "rootDir":"./app_dev",
+    "outDir":"./app",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
