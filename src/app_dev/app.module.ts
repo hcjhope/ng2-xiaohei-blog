@@ -13,6 +13,7 @@ import { HeadTitleComponent } from './components/head-title.component';
 import { TopNavComponent } from './components/top-nav.component';
 import { BottomFooterComponent } from './components/bottom-footer.component';
 import { MainBodyComponent } from './components/main-body.component';
+import { IndexArticleListComponent } from './components/index-article-list.component';
 
 // import users services
 import {BlogCategoryService} from "./services/BlogCategory.service";
@@ -30,7 +31,8 @@ import {BlogCategoryService} from "./services/BlogCategory.service";
     TopNavComponent,
     HeadTitleComponent,
     BottomFooterComponent,
-    MainBodyComponent
+    MainBodyComponent,
+    IndexArticleListComponent
   ],
   // providers means that there is something that you can use in bootstrap modules
   providers: [
