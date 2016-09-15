@@ -11,9 +11,9 @@ let config = {
 	indexBannerHtmlUrl:"html-segments/index-banner.html",
 	nominateArticlePanelHtmlUrl:"html-segments/nominate-article-panel.html",
 	topicArticlePanelHtmlUrl:"html-segments/topic-article-panel.html",
+	hotArticlePanelHtmlUrl:"html-segments/hot-article-panel.html",
 	// unfinished below
 	indexAsideHtmlUrl:"html-segments/my-info-card.html",
-	hotArticlePanelHtmlUrl:"html-segments/my-info-card.html",
 	searchPanelHtmlUrl:"html-segments/my-info-card.html",
 
 
