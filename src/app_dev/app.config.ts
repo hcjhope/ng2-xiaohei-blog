@@ -2,6 +2,8 @@
 
 let config = {
 	rootPath:"html-segments/",
+
+	// local template url
 	topNavHtmlUrl:"html-segments/top-nav.html",
 	headTitleHtmlUrl:"html-segments/head-title.html",
 	bottomFooterHtmlUrl:"html-segments/bottom-footer.html",
@@ -17,9 +19,8 @@ let config = {
 	// unfinished below
 	indexAsideHtmlUrl:"html-segments/my-info-card.html",
 
-
+	// remote ajax request url
 	getCateInfoServiceUrl:"http://www.lizhiqianduan.com/myblog/Ajax/categoryData.php?fn=getCateInfo",
-
+	getArticleListByCategoryIdUrl:"http://www.lizhiqianduan.com/myblog/Ajax/articleData.php?fn=getArtiList"
 }
-
 export {config };

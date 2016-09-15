@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 // blog article metedata
 export class BlogArticle{
 	"blog_id":string;

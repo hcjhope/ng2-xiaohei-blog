@@ -25,6 +25,7 @@ import { MusicPanelComponent } from './components/music-panel.component';
 
 // import users services
 import {BlogCategoryService} from "./services/BlogCategory.service";
+import {BlogArticleService} from "./services/BlogArticle.service";
 
 
 
@@ -51,7 +52,8 @@ import {BlogCategoryService} from "./services/BlogCategory.service";
   ],
   // providers means that there is something that you can use in bootstrap modules
   providers: [
-    BlogCategoryService
+    BlogCategoryService,
+    BlogArticleService
   ],
   bootstrap: [ Ng2XiaoheiBlogComponent,HeadTitleComponent ],
   schemas :[

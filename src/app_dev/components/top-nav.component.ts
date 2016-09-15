@@ -12,7 +12,7 @@ import {BlogCategoryService} from "../services/BlogCategory.service";
 })
 export class TopNavComponent implements OnInit {
 	private categories : BlogCategory[];
-	private firstCategories = new Array<BlogCategory>;
+	private firstCategories = [];
 	private hoverMenu : BlogCategory;
 
 	constructor(
