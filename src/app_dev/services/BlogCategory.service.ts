@@ -30,17 +30,7 @@ export class BlogCategoryService {
                	.catch(this.handleError);
 	}
 
-	// get submenu from local memery
-	getSubMenuList(cate : BlogCategory): BlogCategory[]|void {
-		if(!this.categories) return null;
-		let outList : BlogCategory[];
-		for (let i = 0; i < this.categories.length; ++i) {
-			if(this.categories[i].parent_id == cate.cat_id){
-				outList.push(this.categories[i]);
-			}
-		}
-		return outList;
-	}
+
 
 	handleError():void{
 		console.error(arguments);

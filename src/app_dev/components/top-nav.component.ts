@@ -12,32 +12,42 @@ import {BlogCategoryService} from "../services/BlogCategory.service";
 })
 export class TopNavComponent implements OnInit {
 	private categories : BlogCategory[];
+	private firstCategories = new Array<BlogCategory>;
 	private hoverMenu : BlogCategory;
 
 	constructor(
 		private blogCategoryService : BlogCategoryService
-		) {}
+		) {
+
+	}
 
 	ngOnInit() {
 		this.blogCategoryService.getCateInfo().then(data=>{
-			this.categories = data
+			this.categories = data;
+			console.log(data);
+			this.categories.forEach((ele,index)=>{
+				if(ele.level == 1) this.firstCategories.push(ele); 
+			});
 		})
 		.catch(reason=>{
 			console.error(reason);
 		})
 	}
-	getSubMenu(cate : BlogCategory){
-		let subMenu = this.blogCategoryService.getSubMenuList(cate);
-		if(!subMenu){
-			subMenu = new Array<BlogCategory>;
+
+	// get submenu from local memery
+	getSubMenuList(cate : BlogCategory): BlogCategory[]|void {
+		let outList = Array<BlogCategory>;
+		for (let i = 0; i < this.categories.length; ++i) {
+			if(this.categories[i].parent_id == cate.cat_id){
+				outList.push(this.categories[i]);
+			}
 		}
-		// debug for submenu
-		subMenu.push(new BlogCategory({cat_id:"0",parent_id:"-1"}));
-		return subMenu;
+		return outList;
 	}
 
 	onFirstNavHover(cate : BlogCategory){
 		this.hoverMenu = cate;
+		this.getSubMenuList(cate);
 	}
 
 }
