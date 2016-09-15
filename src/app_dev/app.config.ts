@@ -12,9 +12,10 @@ let config = {
 	nominateArticlePanelHtmlUrl:"html-segments/nominate-article-panel.html",
 	topicArticlePanelHtmlUrl:"html-segments/topic-article-panel.html",
 	hotArticlePanelHtmlUrl:"html-segments/hot-article-panel.html",
+	searchPanelHtmlUrl:"html-segments/search-panel.html",
+	musicPanelHtmlUrl:"html-segments/music-panel.html",
 	// unfinished below
 	indexAsideHtmlUrl:"html-segments/my-info-card.html",
-	searchPanelHtmlUrl:"html-segments/my-info-card.html",
 
 
 	getCateInfoServiceUrl:"http://www.lizhiqianduan.com/myblog/Ajax/categoryData.php?fn=getCateInfo",
