@@ -1,9 +1,23 @@
 <header>
   <nav id="nav">
-    <ul  class="first-nav">
+    <ul  class="first-nav clear">
       <li><a href="/" >网站首页</a></li>
 
-      <li *ngFor="let cate of categories"><a href="/download/" target="_blank" title="个人博客模板">{{cate.cat_name}}</a></li>
+      <li *ngFor="let cate of categories" class="clear" 
+        (mouseout) = "hoverMenu = null">
+      	<a href="/download/" 
+          (mouseover)="onFirstNavHover(cate)" 
+          title="个人博客模板">
+          {{cate.cat_name}}
+        </a>
+
+      	<ul class="second-nav" [class.show]="cate == hoverMenu" 
+          *ngIf="getSubMenu(cate) && getSubMenu(cate).length > 0" >
+          <li ><a href="/js">js</a></li>
+          <li ><a href="/js">css</a></li>
+          <li><a href="/js">html</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 </header>

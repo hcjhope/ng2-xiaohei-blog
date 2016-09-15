@@ -10,4 +10,6 @@ export class BlogCategory  {
 		this.level = 1;
 		this.parent_id = "0";	
 	}
+
+
 }

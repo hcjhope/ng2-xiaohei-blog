@@ -12,6 +12,7 @@ import {BlogCategoryService} from "../services/BlogCategory.service";
 })
 export class TopNavComponent implements OnInit {
 	private categories : BlogCategory[];
+	private hoverMenu : BlogCategory;
 
 	constructor(
 		private blogCategoryService : BlogCategoryService
@@ -25,4 +26,18 @@ export class TopNavComponent implements OnInit {
 			console.error(reason);
 		})
 	}
+	getSubMenu(cate : BlogCategory){
+		let subMenu = this.blogCategoryService.getSubMenuList(cate);
+		if(!subMenu){
+			subMenu = new Array<BlogCategory>;
+		}
+		// debug for submenu
+		subMenu.push(new BlogCategory({cat_id:"0",parent_id:"-1"}));
+		return subMenu;
+	}
+
+	onFirstNavHover(cate : BlogCategory){
+		this.hoverMenu = cate;
+	}
+
 }
