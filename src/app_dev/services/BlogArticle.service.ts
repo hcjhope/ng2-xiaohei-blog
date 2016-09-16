@@ -11,11 +11,12 @@ import { BlogArticle } from '../classes/BlogArticle.class';
 export class BlogArticleService {
 	
 	constructor(private http:Http) {}
-	private pageCount = 5;
+	private pageCount = config.indexArticleListPerPageCount;
 
-	getArticleListByCategoryIdInPage(catId:string,page:number | 1)
+	getArticleListByCategoryIdInPage(catId:string,page:number)
 		: Promise<Array<BlogArticle>>  
 	{
+		if(!page) page = 1;
 		let offsetCount = ((page-1) * this.pageCount);
 		let reqUrl = `${config.getArticleListByCategoryIdUrl}
 					&cat_id=${catId}

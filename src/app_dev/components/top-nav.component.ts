@@ -24,7 +24,6 @@ export class TopNavComponent implements OnInit {
 	ngOnInit() {
 		this.blogCategoryService.getCateInfo().then(data=>{
 			this.categories = data;
-			console.log(data);
 			this.categories.forEach((ele,index)=>{
 				if(ele.level == 1) this.firstCategories.push(ele); 
 			});

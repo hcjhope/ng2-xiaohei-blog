@@ -20,7 +20,6 @@ export class MainBodyComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log(this.routerComptName,this.currentCategory);
 
 	}
 }

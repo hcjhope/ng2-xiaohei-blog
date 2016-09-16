@@ -22,6 +22,11 @@ let config = {
 
 	// remote ajax request url
 	getCateInfoServiceUrl:"http://www.lizhiqianduan.com/myblog/Ajax/categoryData.php?fn=getCateInfo",
-	getArticleListByCategoryIdUrl:"http://www.lizhiqianduan.com/myblog/Ajax/articleData.php?fn=getArtiList"
+	getArticleListByCategoryIdUrl:"http://www.lizhiqianduan.com/myblog/Ajax/articleData.php?fn=getArtiList",
+
+
+	indexArticleListPerPageCount:5,
+
+
 }
 export {config };
