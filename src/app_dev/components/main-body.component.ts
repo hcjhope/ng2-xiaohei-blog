@@ -2,6 +2,9 @@ import { Component , OnInit,Input  } from '@angular/core';
 
 import { config } from '../app.config';
 
+import { BlogArticleService } from '../services/BlogArticle.service';
+import { BlogArticle } from '../classes/BlogArticle.class';
+import { BlogCategory } from '../classes/BlogCategory.class';
 
 @Component({
 	selector: 'main-body',
@@ -10,12 +13,14 @@ import { config } from '../app.config';
 export class MainBodyComponent implements OnInit {
 
 	@Input() isIndexRouter : boolean;
+	@Input() currentCategory : BlogCategory;
 
-	constructor() {
+
+	constructor(private blogArticleService:BlogArticleService) {
 	}
 
 	ngOnInit() {
-		console.log(this.isIndexRouter);		
+
 	}
 }
 

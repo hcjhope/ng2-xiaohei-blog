@@ -11,16 +11,15 @@ import { BlogArticle } from '../classes/BlogArticle.class';
 export class BlogArticleService {
 	
 	constructor(private http:Http) {}
+	private pageCount = 5;
 
-	getArticleListByCategoryId(catId:string,count:number|void,offsetCount:number|void)
+	getArticleListByCategoryIdInPage(catId:string,page:number | 1)
 		: Promise<Array<BlogArticle>>  
 	{
-		if(count == null || count<1) count = 10;
-		if(offsetCount == null || offsetCount<0) offsetCount = 0;
-
+		let offsetCount = ((page-1) * this.pageCount);
 		let reqUrl = `${config.getArticleListByCategoryIdUrl}
 					&cat_id=${catId}
-					&count=${count}
+					&count=${this.pageCount}
 					&offsetCount=${offsetCount}`;
 		return this.http.get(reqUrl)
 			.toPromise()

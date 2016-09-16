@@ -12,6 +12,13 @@ const appRoutes: Routes = [
 		path: '',
 		component: RouterIndexComponent
 	},
+
+	{
+		path: 'article_list/:cat_id',
+		component: RouterCategoryComponent
+	},
+
+
 	{
 		path: '',
 		redirectTo: '',

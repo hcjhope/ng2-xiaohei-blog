@@ -5,9 +5,9 @@
 
       <li *ngFor="let cate of firstCategories" class="clear" 
         (mouseout) = "hoverMenu = null">
-      	<a href="/download/" 
+      	<a routerLink="/article_list/{{cate.cat_id}}" 
           (mouseover)="onFirstNavHover(cate)" 
-          title="个人博客模板">
+          title="{{cate.cat_name}}">
           {{cate.cat_name}}
         </a>
 
