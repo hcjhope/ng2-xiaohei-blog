@@ -3,17 +3,17 @@
 ### 项目目录结构
 
 NG2-XIAOHEI-BLOG\SRC\APP_DEV
-│  app.config.ts
-│  app.module.ts
-│  app.resolvers.ts
-│  app.routing.ts
-│  main.ts
+│  app.config.ts   		配置文件
+│  app.module.ts   		模块依赖文件
+│  app.resolvers.ts 	同步注入文件
+│  app.routing.ts  		路由配置文件
+│  main.ts 				启动文件
 │  
-├─classes
+├─classes  		类型文件夹
 │      BlogArticle.class.ts
 │      BlogCategory.class.ts
 │      
-├─components
+├─components  	组件文件夹
 │      bottom-footer.component.ts
 │      head-title.component.ts
 │      hot-article-panel.component.ts
@@ -31,6 +31,9 @@ NG2-XIAOHEI-BLOG\SRC\APP_DEV
 │      top-nav.component.ts
 │      topic-article-panel.component.ts
 │      
-└─services
+└─services  	服务文件夹
         BlogArticle.service.ts
         BlogCategory.service.ts
+
+
+
