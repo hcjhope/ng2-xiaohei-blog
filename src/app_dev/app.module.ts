@@ -5,9 +5,14 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
+// import ours routing Module
+import { routing } from './app.routing';
 
+// import ours router components
+import { RouterIndexComponent } from './components/router-index.component';
+import { RouterCategoryComponent } from './components/router-category.component';
 
-// import users components
+// import ours components
 import { Ng2XiaoheiBlogComponent } from './components/ng2-xiaohei-blog.component';
 import { HeadTitleComponent } from './components/head-title.component';
 import { TopNavComponent } from './components/top-nav.component';
@@ -21,6 +26,7 @@ import { TopicArticlePanelComponent } from './components/topic-article-panel.com
 import { HotArticlePanelComponent } from './components/hot-article-panel.component';
 import { SearchPanelComponent } from './components/search-panel.component';
 import { MusicPanelComponent } from './components/music-panel.component';
+import { SubmenuPanelComponent } from './components/submenu-panel.component';
 
 
 // import users services
@@ -33,10 +39,15 @@ import {BlogArticleService} from "./services/BlogArticle.service";
 
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   declarations: [
     Ng2XiaoheiBlogComponent , 
+
+    RouterIndexComponent,
+    RouterCategoryComponent,
+
     TopNavComponent,
     HeadTitleComponent,
     BottomFooterComponent,
@@ -48,7 +59,8 @@ import {BlogArticleService} from "./services/BlogArticle.service";
     TopicArticlePanelComponent,
     HotArticlePanelComponent,
     SearchPanelComponent,
-    MusicPanelComponent
+    MusicPanelComponent,
+    SubmenuPanelComponent
   ],
   // providers means that there is something that you can use in bootstrap modules
   providers: [

@@ -16,6 +16,7 @@ let config = {
 	hotArticlePanelHtmlUrl:"html-segments/hot-article-panel.html",
 	searchPanelHtmlUrl:"html-segments/search-panel.html",
 	musicPanelHtmlUrl:"html-segments/music-panel.html",
+	submenuPanelHtmlUrl:"html-segments/submenu-panel.html",
 	// unfinished below
 	indexAsideHtmlUrl:"html-segments/my-info-card.html",
 

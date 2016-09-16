@@ -36,7 +36,7 @@ export class TopNavComponent implements OnInit {
 
 	// get submenu from local memery
 	getSubMenuList(cate : BlogCategory): BlogCategory[]|void {
-		let outList = Array<BlogCategory>;
+		let outList = [];
 		for (let i = 0; i < this.categories.length; ++i) {
 			if(this.categories[i].parent_id == cate.cat_id){
 				outList.push(this.categories[i]);

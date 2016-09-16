@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component , OnInit,Input  } from '@angular/core';
 
 import { config } from '../app.config';
 
@@ -8,10 +8,14 @@ import { config } from '../app.config';
 	templateUrl: config.mainBodyHtmlUrl
 })
 export class MainBodyComponent implements OnInit {
-	constructor() {}
+
+	@Input() isIndexRouter : boolean;
+
+	constructor() {
+	}
 
 	ngOnInit() {
-		
+		console.log(this.isIndexRouter);		
 	}
 }
 

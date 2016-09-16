@@ -7,9 +7,7 @@ import { config } from '../app.config';
 @Component({
   selector: 'ng2-xiaohei-blog',
   template: `
-    <top-nav></top-nav>
-    <main-body></main-body>
-    <bottom-footer></bottom-footer>
+    <router-outlet></router-outlet>
   `
 })
 export class Ng2XiaoheiBlogComponent {

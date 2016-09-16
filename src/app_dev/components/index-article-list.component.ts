@@ -15,16 +15,19 @@ export class IndexArticleListComponent implements OnInit {
 	private curpage = 1;
 	private curpageOffsetCount = 0;
 	private pageCount = 5;
-	private cateId = '0';
-	private articles : BlogArticle[];
+
+	private currentCateId = '0';
+	private articles = new Array<BlogArticle>();
 	constructor(
 		private blogArticleService:BlogArticleService
-		) {}
+		) {
+	}
 
 	ngOnInit() {
-		this.blogArticleService.getArticleListByCategoryId(this.cateId,this.pageCount,this.curpageOffsetCount)
+		this.blogArticleService.getArticleListByCategoryId(this.currentCateId,this.pageCount,this.curpageOffsetCount)
 			.then(data=>{
 				this.articles = data;
+				// this.articles.concat(data);
 			})
 	}
 

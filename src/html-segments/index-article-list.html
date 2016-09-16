@@ -9,18 +9,18 @@
           <ul class="textinfo">
             <a href="/"><img src="resources/images/s1.jpg"></a>
             <p> 
-              我希望我的爱情是这样的，相濡以沫，举案齐眉，平淡如水。我在岁月中找到他，依靠他，将一生交付给他。做他的妻子，他孩子的母亲，为他做饭，洗衣服，缝一颗掉了的纽扣。然后，我们一起在时光中变老。
+              {{article.flag}}
             </p>
           </ul>
           <ul class="details">
-            <li class="likes"><a href="#">10</a></li>
-            <li class="comments"><a href="#">34</a></li>
-            <li class="icon-time"><a href="#">{{article.createTime}}</a></li>
+            <li class="likes"><a href="#">{{article.click_count}}</a></li>
+            <li class="comments"><a href="#">{{article.comment_num}}</a></li>
+            <li class="icon-time"><a href="#">{{article.add_time}}</a></li>
           </ul>
         </div>
         <!--arrow_box end--> 
       </li>
-      <div class="addMore" >加載更多</div>
+      <div class="addMore" (click)="onAddMoreClicked()">加載更多</div>
 
     </ul>
 
