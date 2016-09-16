@@ -35,7 +35,6 @@ export class IndexArticleListComponent implements OnInit {
 	// listen the property `currentCategory` change event when switch top menu 
 	@Input()
 	set currentCategory(currentCategory:BlogCategory){
-		console.log(currentCategory);
 		if(!currentCategory) 
 			this.currentCateId = '0';
 		else{
@@ -65,7 +64,6 @@ export class IndexArticleListComponent implements OnInit {
 		this.addMoreIsLoading = true;
 		this.blogArticleService.getArticleListByCategoryIdInPage(this.currentCateId,++this.curpage)
 			.then(data=>{
-				console.log(data);
 				if(!data || data.length<config.indexArticleListPerPageCount)
 					this.currentCateNoMoreArticles = true;
 				this.articles = this.articles.concat(data);

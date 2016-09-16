@@ -11,7 +11,7 @@ import { BlogCategory } from '../classes/BlogCategory.class';
 @Component({
 	selector: 'router-category',
 	template: `
-	    <top-nav></top-nav>
+	    <top-nav [currentCategory]="currentCategory"></top-nav>
 		<main-body [currentCategory]="currentCategory" [routerComptName]="constructor.name"></main-body>
 		<bottom-footer></bottom-footer>
 	`
@@ -23,9 +23,7 @@ export class RouterCategoryComponent implements OnInit {
 		private route: ActivatedRoute,
 		private blogCategoryService : BlogCategoryService) {
 		this.route.params.forEach((params : Params)=>{
-			console.log(params,11111);
 			this.currentCategory = this.blogCategoryService.getCategoryByCateId(params['cat_id']);
-			console.log(this.currentCategory)
 		})
 
 	}

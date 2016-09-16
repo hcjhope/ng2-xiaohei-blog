@@ -5,14 +5,15 @@
 
       <li *ngFor="let cate of firstCategories" class="clear" 
         (mouseout) = "hoverMenu = null">
-      	<a routerLink="/article_list/{{cate.cat_id}}" 
+      	<a id = "{{(currentCategory && currentCategory == cate)?'nav_current':''}}"
+          routerLink="/article_list/{{cate.cat_id}}" 
           (mouseover)="onFirstNavHover(cate)" 
           title="{{cate.cat_name}}">
           {{cate.cat_name}}
         </a>
 
       	<ul class="second-nav" [class.show]="cate == hoverMenu"  >
-          <li *ngFor="let submenu of getSubMenuList(cate)"><a href="/js">{{submenu.cat_name}}</a></li>
+          <li *ngFor="let submenu of getSubMenuList(cate)"><a routerLink="/article_list/{{submenu.cat_id}}">{{submenu.cat_name}}</a></li>
         </ul>
       </li>
     </ul>

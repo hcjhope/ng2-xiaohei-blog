@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component , OnInit , Input} from '@angular/core';
 
 import { config } from '../app.config';
 import { BlogCategory } from '../classes/BlogCategory.class';
@@ -11,6 +11,9 @@ import {BlogCategoryService} from "../services/BlogCategory.service";
 	templateUrl: config.topNavHtmlUrl
 })
 export class TopNavComponent implements OnInit {
+
+	@Input() currentCategory : BlogCategory;
+
 	private categories : BlogCategory[];
 	private firstCategories = [];
 	private hoverMenu : BlogCategory;
