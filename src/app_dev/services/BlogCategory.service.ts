@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { BlogCategory } from '../classes/BlogCategory.class';
 
+
 @Injectable()
 export class BlogCategoryService {
 
@@ -22,15 +23,35 @@ export class BlogCategoryService {
 				resolve(this.categories);
 			});
 		}
+
+		// test for resolver
+		// return new Promise<BlogCategory[]>((resolve,reject)=>{
+		// 	setTimeout(()=>{
+		// 		console.log(999999)
+		// 		this.categories = [new BlogCategory()];
+		// 		resolve(this.categories);
+		// 	},5000);
+		// });        
+
+
+
 		return this.http.get(config.getCateInfoServiceUrl)
 				.toPromise()
                	.then(response => {
-               		return response.json() as BlogCategory[]
+               		this.categories = response.json() as BlogCategory[];
+               		return this.categories;
                	})
                	.catch(this.handleError);
 	}
 
-
+	// 
+	getCategoryByCateId(cateId:string):BlogCategory{
+		let cate : BlogCategory;
+		this.categories.forEach((ele)=>{
+			if(cateId == ele.cat_id) cate = ele;
+		})
+		return cate;
+	}
 
 	handleError():void{
 		console.error(arguments);

@@ -4,13 +4,13 @@ import { Component, OnInit } from '@angular/core';
 	selector: 'router-index',
 	template: `
 	    <top-nav></top-nav>
-		<main-body [currentCategory]=null></main-body>
+		<main-body [currentCategory]=null [routerComptName]="constructor.name"></main-body>
 		<bottom-footer></bottom-footer>
 	`
 })
 export class RouterIndexComponent implements OnInit {
-	
-	constructor() {}
+	constructor() {
+	}
 
 	ngOnInit() {
 		

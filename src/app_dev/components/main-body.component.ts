@@ -12,7 +12,7 @@ import { BlogCategory } from '../classes/BlogCategory.class';
 })
 export class MainBodyComponent implements OnInit {
 
-	@Input() isIndexRouter : boolean;
+	@Input() routerComptName : string;
 	@Input() currentCategory : BlogCategory;
 
 
@@ -20,6 +20,7 @@ export class MainBodyComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		console.log(this.routerComptName,this.currentCategory);
 
 	}
 }

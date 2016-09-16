@@ -29,6 +29,7 @@ export class IndexArticleListComponent implements OnInit {
 
 	ngOnInit() {
 		if(!this.currentCategory) this.currentCateId = '0';
+		this.currentCateId = this.currentCategory.cat_id;
 		this.blogArticleService.getArticleListByCategoryIdInPage(this.currentCateId,this.curpage)
 			.then(data=>{
 				this.articles = data;

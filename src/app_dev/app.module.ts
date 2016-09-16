@@ -33,7 +33,8 @@ import { SubmenuPanelComponent } from './components/submenu-panel.component';
 import {BlogCategoryService} from "./services/BlogCategory.service";
 import {BlogArticleService} from "./services/BlogArticle.service";
 
-
+// import ours resolvers
+import { RouterCategoryResolver } from './app.resolvers';
 
 @NgModule({
 
@@ -65,7 +66,8 @@ import {BlogArticleService} from "./services/BlogArticle.service";
   // providers means that there is something that you can use in bootstrap modules
   providers: [
     BlogCategoryService,
-    BlogArticleService
+    BlogArticleService,
+    RouterCategoryResolver
   ],
   bootstrap: [ Ng2XiaoheiBlogComponent,HeadTitleComponent ],
   schemas :[
