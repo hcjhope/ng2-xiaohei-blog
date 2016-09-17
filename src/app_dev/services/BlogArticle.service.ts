@@ -30,6 +30,20 @@ export class BlogArticleService {
 			.catch(this.handleError)
 	}
 
+	getArticleInfoByBlogId(blogId:string) : Promise<BlogArticle>{
+		let reqUrl = `${config.getArticleInfoByBlogIdUrl}
+					&blog_id=${blogId}`;
+		
+		return this.http.get(reqUrl)
+			.toPromise()
+			.then((response)=>{
+				return response.json() as BlogArticle;
+			})
+			.catch(this.handleError)
+	}
+
+
+
 	handleError():void{
 		console.error(arguments);
 	}

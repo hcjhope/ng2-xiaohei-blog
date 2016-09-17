@@ -16,11 +16,12 @@ export class MainBodyComponent implements OnInit {
 	@Input() currentCategory : BlogCategory;
 
 
+
 	constructor(private blogArticleService:BlogArticleService) {
 	}
 
 	ngOnInit() {
-
+		console.log(1111);
 	}
 }
 
