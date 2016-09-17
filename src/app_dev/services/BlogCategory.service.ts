@@ -53,6 +53,21 @@ export class BlogCategoryService {
 		return cate;
 	}
 
+	getFirstMenuBySonMenu(cate : BlogCategory ) : BlogCategory {
+		if(!cate || cate.level == 1){
+			// console.log(cate.cat_name,'is first menu!');
+			return cate;
+		}
+		let outMenu : BlogCategory;
+		this.categories.forEach(ele=>{
+
+			if(ele.cat_id == cate.parent_id){
+				outMenu = ele;
+				console.log(ele.cat_name,"first menu of ",cate.cat_name);
+			}
+		})
+		return outMenu;
+	}
 	handleError():void{
 		console.error(arguments);
 	}

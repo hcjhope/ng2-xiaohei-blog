@@ -13,12 +13,12 @@
   <div class="blogs clear">
   
     <index-article-list [currentCategory]="currentCategory">
-      article is loading...
+      Article is loading...
     </index-article-list>
     
     
     <aside>
-      <submenu-panel *ngIf="!isIndexRouter" >submenu is loading ... </submenu-panel>
+      <submenu-panel *ngIf="routerComptName!='RouterIndexComponent'" >submenu is loading ... </submenu-panel>
 
       <nominate-article-panel>推荐文章加载中...</nominate-article-panel>
 

@@ -2,7 +2,7 @@
 
 ### 项目目录结构
 
-        NG2-XIAOHEI-BLOG\SRC\APP_DEV
+        NG2-XIAOHEI-BLOG\SRC\app_dev
         │  app.config.ts   		配置文件
         │  app.module.ts   		模块依赖文件
         │  app.resolvers.ts 	同步注入文件
@@ -32,8 +32,10 @@
         │      topic-article-panel.component.ts
         │      
         └─services  	服务文件夹
-                BlogArticle.service.ts
-                BlogCategory.service.ts
+        │      BlogArticle.service.ts
+        │      BlogCategory.service.ts
+        NG2-XIAOHEI-BLOG\SRC\html-segments      组件模板文件
+
 
 
 
