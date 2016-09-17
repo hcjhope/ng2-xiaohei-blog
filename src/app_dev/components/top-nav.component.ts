@@ -53,20 +53,8 @@ export class TopNavComponent implements OnInit {
 		return outList;
 	}
 
-	getFirstMenuBySonMenu(cate : BlogCategory | any) : BlogCategory | void {
-		if(!cate || cate.level == 1){
-			// console.log(cate.cat_name,'is first menu!');
-			return cate;
-		}
-		let outMenu : BlogCategory;
-		this.categories.forEach(ele=>{
-
-			if(ele.cat_id == cate.parent_id){
-				outMenu = ele;
-				console.log(ele.cat_name,"first menu of ",cate.cat_name);
-			}
-		})
-		return outMenu;
+	getFirstMenuBySonMenu(cate:BlogCategory):BlogCategory{
+		return this.blogCategoryService.getFirstMenuBySonMenu(cate);
 	}
 
 	onFirstNavHover(cate : BlogCategory){

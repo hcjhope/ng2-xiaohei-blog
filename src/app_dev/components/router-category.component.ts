@@ -22,12 +22,13 @@ export class RouterCategoryComponent implements OnInit {
 	constructor(
 		private route: ActivatedRoute,
 		private blogCategoryService : BlogCategoryService) {
-		this.route.params.forEach((params : Params)=>{
-			this.currentCategory = this.blogCategoryService.getCategoryByCateId(params['cat_id']);
-		})
 
 	}
+
 	ngOnInit() {
 		// console.log(this.route.params);
+		this.route.params && this.route.params.forEach((params : Params)=>{
+			this.currentCategory = this.blogCategoryService.getCategoryByCateId(params['cat_id']);
+		})
 	}
 }
