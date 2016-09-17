@@ -11,6 +11,7 @@ import { routing } from './app.routing';
 // import ours router components
 import { RouterIndexComponent } from './components/router-index.component';
 import { RouterCategoryComponent } from './components/router-category.component';
+import { BlogDetailsComponent } from './components/blog-details.component';
 
 // import ours components
 import { Ng2XiaoheiBlogComponent } from './components/ng2-xiaohei-blog.component';
@@ -61,7 +62,8 @@ import { RouterCategoryResolver } from './app.resolvers';
     HotArticlePanelComponent,
     SearchPanelComponent,
     MusicPanelComponent,
-    SubmenuPanelComponent
+    SubmenuPanelComponent,
+    BlogDetailsComponent
   ],
   // providers means that there is something that you can use in bootstrap modules
   providers: [

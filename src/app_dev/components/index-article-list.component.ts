@@ -1,4 +1,5 @@
 import { Component , OnInit ,Input} from '@angular/core';
+import { Router } from '@angular/router';
 
 import { config } from '../app.config';
 import { BlogArticleService } from '../services/BlogArticle.service';
@@ -24,6 +25,7 @@ export class IndexArticleListComponent implements OnInit {
 	private articles : Array<BlogArticle>;
 	
 	constructor(
+		private router: Router,
 		private blogArticleService:BlogArticleService
 		) {
 	}
@@ -52,9 +54,9 @@ export class IndexArticleListComponent implements OnInit {
 			})
 	}
 
-	// get currentCategory(){
-	// 	return this._currentCategory;
-	// }
+	onGoTOBlogDetails(blog_id){
+		this.router.navigate(['/article_blog_details', blog_id]);
+	}
 
 	onAddMoreClicked(){
 		if(this.addMoreIsLoading || this.currentCateNoMoreArticles) {
