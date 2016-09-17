@@ -23,7 +23,7 @@ let config = {
 	// remote ajax request url
 	getCateInfoServiceUrl:"http://www.lizhiqianduan.com/myblog/Ajax/categoryData.php?fn=getCateInfo",
 	getArticleListByCategoryIdUrl:"http://www.lizhiqianduan.com/myblog/Ajax/articleData.php?fn=getArtiList",
-
+	getArticleInfoByBlogIdUrl:"http://www.lizhiqianduan.com/myblog/Ajax/articleData.php?fn=getArticleInfoById",
 
 	indexArticleListPerPageCount:5,
 

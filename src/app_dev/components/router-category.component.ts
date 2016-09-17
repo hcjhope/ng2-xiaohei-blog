@@ -30,5 +30,6 @@ export class RouterCategoryComponent implements OnInit {
 		this.route.params && this.route.params.forEach((params : Params)=>{
 			this.currentCategory = this.blogCategoryService.getCategoryByCateId(params['cat_id']);
 		})
+
 	}
 }
