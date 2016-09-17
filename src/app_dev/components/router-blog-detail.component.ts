@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,enableProdMode } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
 
@@ -8,6 +8,8 @@ import { BlogArticleService } from '../services/BlogArticle.service';
 import { BlogCategoryService } from '../services/BlogCategory.service';
 import { BlogArticle } from '../classes/BlogArticle.class';
 import { BlogCategory } from '../classes/BlogCategory.class';
+
+enableProdMode();
 
 @Component({
 	selector: 'router-blog-detail',
@@ -29,6 +31,5 @@ export class RouterBlogDetailComponent implements OnInit {
 		this.route.params && this.route.params.forEach((params : Params)=>{
 			this.currentCategory = this.blogCategoryService.getCategoryByCateId(params['cat_id']);
 		})
-		console.log(this);
 	}
 }
