@@ -39,7 +39,6 @@ export class TopNavComponent implements OnInit {
 	@Input()
 	set currentCategory(cate:BlogCategory){
 		this._currentCategory = this.getFirstMenuBySonMenu(cate);
-		console.log(this._currentCategory);
 	}
 
 	// get submenu from local memery

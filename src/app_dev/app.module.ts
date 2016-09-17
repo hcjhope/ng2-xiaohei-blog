@@ -4,6 +4,7 @@ import { NgModule ,NO_ERRORS_SCHEMA}       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule }    from '@angular/http';
+import { NgTemplateOutlet } from '@angular/common';
 
 // import ours routing Module
 import { routing } from './app.routing';
@@ -11,9 +12,9 @@ import { routing } from './app.routing';
 // import ours router components
 import { RouterIndexComponent } from './components/router-index.component';
 import { RouterCategoryComponent } from './components/router-category.component';
-import { BlogDetailsComponent } from './components/blog-details.component';
+import { RouterBlogDetailComponent } from './components/router-blog-detail.component';
 
-// import ours components
+// import ours container components
 import { Ng2XiaoheiBlogComponent } from './components/ng2-xiaohei-blog.component';
 import { HeadTitleComponent } from './components/head-title.component';
 import { TopNavComponent } from './components/top-nav.component';
@@ -28,9 +29,10 @@ import { HotArticlePanelComponent } from './components/hot-article-panel.compone
 import { SearchPanelComponent } from './components/search-panel.component';
 import { MusicPanelComponent } from './components/music-panel.component';
 import { SubmenuPanelComponent } from './components/submenu-panel.component';
+import { BlogDetailsComponent } from './components/blog-details.component';
 
 
-// import users services
+// import ours services
 import {BlogCategoryService} from "./services/BlogCategory.service";
 import {BlogArticleService} from "./services/BlogArticle.service";
 
@@ -42,6 +44,8 @@ import { RouterCategoryResolver } from './app.resolvers';
   imports: [
     BrowserModule,
     HttpModule,
+
+    // NgTemplateOutlet,
     routing
   ],
   declarations: [
@@ -49,7 +53,8 @@ import { RouterCategoryResolver } from './app.resolvers';
 
     RouterIndexComponent,
     RouterCategoryComponent,
-
+    RouterBlogDetailComponent,
+    
     TopNavComponent,
     HeadTitleComponent,
     BottomFooterComponent,

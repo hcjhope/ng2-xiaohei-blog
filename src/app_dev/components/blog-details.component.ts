@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { config  } from '../app.config';
 import { BlogArticleService } from '../services/BlogArticle.service';
+import { BlogCategoryService } from '../services/BlogCategory.service';
 import { BlogArticle } from '../classes/BlogArticle.class';
 
 
@@ -12,22 +13,22 @@ import { BlogArticle } from '../classes/BlogArticle.class';
 })
 export class BlogDetailsComponent implements OnInit {
 
-    private blogArticle: BlogArticle;
+    private blogArticle: Object;
 
     constructor(private route: ActivatedRoute,
+                private blogCategoryService : BlogCategoryService,
                 private blogArticleService : BlogArticleService) { }
 
     ngOnInit() {
+
         this.route.params.forEach((params: Params) => {
             let blog_id = params['blog_id'];
             this.blogArticleService.getArticleInfoByBlogId(blog_id)
 			.then(data=>{
-                data.author = "圊國圊國";
-                data.cat_name = "小说";
+                data.cat_name = this.blogCategoryService.getCategoryByCateId(data.cat_id).cat_name;
 				this.blogArticle = data;
 			});
         });
-        console.log('blog details init~');
     }
 
 

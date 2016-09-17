@@ -54,10 +54,6 @@ export class IndexArticleListComponent implements OnInit {
 			})
 	}
 
-	onGoTOBlogDetails(blog_id){
-		this.router.navigate(['/article_blog_details', blog_id]);
-	}
-
 	onAddMoreClicked(){
 		if(this.addMoreIsLoading || this.currentCateNoMoreArticles) {
 			console.log("Is loading or no more articles !")

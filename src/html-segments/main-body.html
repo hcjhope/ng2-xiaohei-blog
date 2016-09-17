@@ -12,13 +12,19 @@
   
   <div class="blogs clear">
   
-    <index-article-list [currentCategory]="currentCategory">
+    <index-article-list 
+      *ngIf="routerComptName == 'RouterIndexComponent' || routerComptName =='RouterCategoryComponent'" 
+      [currentCategory]="currentCategory">
       Article is loading...
     </index-article-list>
     
+    <blog-details *ngIf="routerComptName == 'RouterBlogDetailComponent'"> Blog is loading ... </blog-details>
+
     
     <aside>
-      <submenu-panel *ngIf="routerComptName!='RouterIndexComponent'" >submenu is loading ... </submenu-panel>
+      <submenu-panel 
+        *ngIf="routerComptName == 'RouterBlogDetailComponent' || routerComptName =='RouterCategoryComponent'"  >submenu is loading ... 
+      </submenu-panel>
 
       <nominate-article-panel>推荐文章加载中...</nominate-article-panel>
 

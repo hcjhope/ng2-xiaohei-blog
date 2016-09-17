@@ -5,8 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 // import ours router components
 import { RouterIndexComponent } from './components/router-index.component';
 import { RouterCategoryComponent } from './components/router-category.component';
-import { BlogDetailsComponent } from './components/blog-details.component';
+import { RouterBlogDetailComponent } from './components/router-blog-detail.component';
 
+// import ours resolvers
 import { RouterCategoryResolver } from './app.resolvers';
 
 
@@ -28,8 +29,11 @@ const appRoutes: Routes = [
 		}
 	},
 	{
-		path: 'article_blog_details/:blog_id',
-		component: BlogDetailsComponent
+		path: 'articles/:blog_id',
+		component: RouterBlogDetailComponent,
+		resolve: {
+			category: RouterCategoryResolver
+		}
 	},
 	{
 		path: '',
