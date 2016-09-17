@@ -23,7 +23,8 @@
     
     <aside>
       <submenu-panel 
-        *ngIf="routerComptName == 'RouterBlogDetailComponent' || routerComptName =='RouterCategoryComponent'"  >submenu is loading ... 
+        *ngIf="routerComptName == 'RouterBlogDetailComponent' || routerComptName =='RouterCategoryComponent'" [currentCategory]="currentCategory">
+         submenu is loading ... 
       </submenu-panel>
 
       <nominate-article-panel>推荐文章加载中...</nominate-article-panel>

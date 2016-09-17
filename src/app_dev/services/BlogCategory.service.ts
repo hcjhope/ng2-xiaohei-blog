@@ -11,6 +11,7 @@ import { BlogCategory } from '../classes/BlogCategory.class';
 export class BlogCategoryService {
 
 	private categories : BlogCategory[];
+	private levelOneMenu = new Array<BlogCategory>();
 
 	constructor(private http:Http) {
 
@@ -39,6 +40,9 @@ export class BlogCategoryService {
 				.toPromise()
                	.then(response => {
                		this.categories = response.json() as BlogCategory[];
+               		this.categories.forEach((ele,index)=>{
+						if(ele.level == 1) this.levelOneMenu.push(ele as BlogCategory); 
+					});
                		return this.categories;
                	})
                	.catch(this.handleError);
@@ -68,6 +72,21 @@ export class BlogCategoryService {
 		})
 		return outMenu;
 	}
+
+	getSubMenuList(cate : BlogCategory): BlogCategory[]|void {
+		let outList = new Array<BlogCategory>();
+		for (let i = 0; i < this.categories.length; ++i) {
+			if(this.categories[i].parent_id == cate.cat_id){
+				outList.push(this.categories[i]);
+			}
+		}
+		return outList;
+	}
+
+	getLevelOneMenu() : BlogCategory[]{
+		return this.levelOneMenu;
+	}
+
 	handleError():void{
 		console.error(arguments);
 	}
