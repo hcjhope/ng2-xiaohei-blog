@@ -1,3 +1,7 @@
+这里是项目的开发分支，欢迎你的到来！
+
+There is the develop branch of this project, welcome to comming!
+
 # ng2-xiaohei-blog [中文介绍]
 
 这个项目是为我的博客创建的，我的博客大概两年前使用angular.js-1.3.x建立的，博客地址 http://www.lizhiqianduan.com/myblog 。
