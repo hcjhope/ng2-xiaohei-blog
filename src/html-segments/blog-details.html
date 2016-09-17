@@ -1,5 +1,5 @@
     <div id="index_view" *ngIf="blogArticle">
-        <h2 class="t_nav"><a routerLink="/">网站首页</a><a routerLink="/article_list/{{blogArticle.cat_id}}">{{blogArticle.cat_name}}</a></h2>
+        <h2 class="t_nav"><a routerLink="/">网站首页</a><a routerLink="/article_list/{{currentCategory.cat_id}}">{{currentCategory.cat_name}}</a></h2>
         <h1 class="c_titile">{{blogArticle.title}}</h1>
         <p class="box">发布时间：{{blogArticle.add_time}}<span>编辑：{{blogArticle.author}}</span>阅读（{{blogArticle.click_count}}）</p>
 

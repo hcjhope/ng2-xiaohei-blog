@@ -5,6 +5,7 @@ import { config  } from '../app.config';
 import { BlogArticleService } from '../services/BlogArticle.service';
 import { BlogCategoryService } from '../services/BlogCategory.service';
 import { BlogArticle } from '../classes/BlogArticle.class';
+import { BlogCategory } from '../classes/BlogCategory.class';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { BlogArticle } from '../classes/BlogArticle.class';
 })
 export class BlogDetailsComponent implements OnInit {
 
-    private blogArticle: Object;
+    private blogArticle: BlogArticle;
+    private currentCategory : BlogCategory;
 
     constructor(private route: ActivatedRoute,
                 private blogCategoryService : BlogCategoryService,
@@ -25,7 +27,7 @@ export class BlogDetailsComponent implements OnInit {
             let blog_id = params['blog_id'];
             this.blogArticleService.getArticleInfoByBlogId(blog_id)
 			.then(data=>{
-                data.cat_name = this.blogCategoryService.getCategoryByCateId(data.cat_id).cat_name;
+                this.currentCategory = this.blogCategoryService.getCategoryByCateId(data.cat_id);
 				this.blogArticle = data;
 			});
         });
