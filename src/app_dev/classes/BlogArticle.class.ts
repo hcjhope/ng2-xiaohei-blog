@@ -13,6 +13,8 @@ export class BlogArticle{
 	"display":string;
 	"blog_thumbUrl":string;
 	"key_word":string;
+	"author":string;
+	"cat_name":string;
 }
 
 
