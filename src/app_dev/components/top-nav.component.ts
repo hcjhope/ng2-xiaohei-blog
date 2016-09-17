@@ -12,7 +12,7 @@ import {BlogCategoryService} from "../services/BlogCategory.service";
 })
 export class TopNavComponent implements OnInit {
 
-	@Input() currentCategory : BlogCategory;
+	private _currentCategory : BlogCategory | void;
 
 	private categories : BlogCategory[];
 	private firstCategories = [];
@@ -36,6 +36,12 @@ export class TopNavComponent implements OnInit {
 		})
 	}
 
+	@Input()
+	set currentCategory(cate:BlogCategory){
+		this._currentCategory = this.getFirstMenuBySonMenu(cate);
+		console.log(this._currentCategory);
+	}
+
 	// get submenu from local memery
 	getSubMenuList(cate : BlogCategory): BlogCategory[]|void {
 		let outList = [];
@@ -45,6 +51,22 @@ export class TopNavComponent implements OnInit {
 			}
 		}
 		return outList;
+	}
+
+	getFirstMenuBySonMenu(cate : BlogCategory | any) : BlogCategory | void {
+		if(!cate || cate.level == 1){
+			// console.log(cate.cat_name,'is first menu!');
+			return cate;
+		}
+		let outMenu : BlogCategory;
+		this.categories.forEach(ele=>{
+
+			if(ele.cat_id == cate.parent_id){
+				outMenu = ele;
+				console.log(ele.cat_name,"first menu of ",cate.cat_name);
+			}
+		})
+		return outMenu;
 	}
 
 	onFirstNavHover(cate : BlogCategory){

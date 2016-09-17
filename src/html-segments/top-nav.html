@@ -1,19 +1,22 @@
 <header>
   <nav id="nav">
     <ul  class="first-nav clear">
-      <li><a routerLink="/" >网站首页</a></li>
+      <li><a id="{{_currentCategory?'':'nav_current'}}" routerLink="/" >网站首页</a></li>
 
       <li *ngFor="let cate of firstCategories" class="clear" 
         (mouseout) = "hoverMenu = null">
-      	<a id = "{{(currentCategory && currentCategory == cate)?'nav_current':''}}"
+      	<a id = "{{(_currentCategory && _currentCategory == cate)?'nav_current':''}}"
           routerLink="/article_list/{{cate.cat_id}}" 
           (mouseover)="onFirstNavHover(cate)" 
           title="{{cate.cat_name}}">
           {{cate.cat_name}}
         </a>
-
+  
+        <!-- submenu -->
       	<ul class="second-nav" [class.show]="cate == hoverMenu"  >
-          <li *ngFor="let submenu of getSubMenuList(cate)"><a routerLink="/article_list/{{submenu.cat_id}}">{{submenu.cat_name}}</a></li>
+          <li *ngFor="let submenu of getSubMenuList(cate)">
+            <a routerLink="/article_list/{{submenu.cat_id}}">{{submenu.cat_name}}</a>
+          </li>
         </ul>
       </li>
     </ul>
