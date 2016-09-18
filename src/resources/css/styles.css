@@ -162,13 +162,15 @@ _width:expression((document.documentElement.clientWidth||document.body.clientWid
 .box span { margin: 0 10px }
 .share { width: 100%; height: 30px; display: block }
 /* 右侧导航 */
-.sunnav li { display: block; float: left; line-height: 36px; width: 100%; text-align: center }
-.sunnav li:first-child { background: #1A8A8A; }
-.sunnav li:nth-child(2) { background: #E7A82B; }
-.sunnav li:nth-child(3) { background: #E72B2B; }
+.sunnav li { display: block; float: left; line-height: 36px; width: 100%; text-align: left; }
+.sunnav li:nth-child(3n+1)  { background: #1A8A8A; }
+.sunnav li:nth-child(3n+2) { background: #E7A82B; }
+.sunnav li:nth-child(3n+3) { background: #E72B2B; }
 .sunnav li:last-child { background: #085A5A; }
-.sunnav li a { color: #fff; opacity: 0.8 }
-.sunnav li a:hover { padding-left: 20px; opacity: 1 }
+.sunnav li a { color: #fff; opacity: 0.8 ; margin-left: 20px; display: block;}
+.sunnav .second-menu a{margin-left: 40px;}
+.sunnav li a:hover { opacity: 1 }
+.sunnav li a.current { opacity: 1;font-weight: bold; }
 /* 相关文章list */
 .otherlink h2 { border-bottom: #ccc 2px solid; font-size: 12px; font-weight: normal; line-height: 48px; height: 40px }
 .otherlink ul { margin: 10px 0 }

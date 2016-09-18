@@ -27,30 +27,22 @@ export class TopNavComponent implements OnInit {
 	ngOnInit() {
 		this.blogCategoryService.getCateInfo().then(data=>{
 			this.categories = data;
-			this.categories.forEach((ele,index)=>{
-				if(ele.level == 1) this.firstCategories.push(ele); 
-			});
 		})
 		.catch(reason=>{
 			console.error(reason);
-		})
+		});
+
+		this.firstCategories = this.blogCategoryService.getLevelOneMenu();
 	}
 
 	@Input()
 	set currentCategory(cate:BlogCategory){
 		this._currentCategory = this.getFirstMenuBySonMenu(cate);
-		console.log(this._currentCategory);
 	}
 
 	// get submenu from local memery
 	getSubMenuList(cate : BlogCategory): BlogCategory[]|void {
-		let outList = [];
-		for (let i = 0; i < this.categories.length; ++i) {
-			if(this.categories[i].parent_id == cate.cat_id){
-				outList.push(this.categories[i]);
-			}
-		}
-		return outList;
+		return this.blogCategoryService.getSubMenuList(cate);
 	}
 
 	getFirstMenuBySonMenu(cate:BlogCategory):BlogCategory{

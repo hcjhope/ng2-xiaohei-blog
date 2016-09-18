@@ -15,6 +15,9 @@ export class BlogArticle{
 	"key_word":string;
 	"author":string;
 	"cat_name":string;
+	constructor(){
+		if(!this.author) this.author = "lizhiqianduan";
+	}
 }
 
 
